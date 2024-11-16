@@ -8,7 +8,7 @@ WORKDIR /app
 VOLUME /tmp
 
 # Copy semua file .jar dari folder target ke dalam container dan beri nama app.jar
-COPY target/*.jar app.jar
+COPY build/libs/*.jar app.jar
 
 # Perintah untuk menjalankan aplikasi Spring Boot
 ENTRYPOINT ["java", "-jar", "/app.jar"]
