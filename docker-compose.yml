@@ -1,0 +1,27 @@
+#untuk dijalankan di local
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      # Environment variables untuk koneksi database
+      DB_HOST: erxv1bzckceve5lh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+      DB_PORT: 3306
+      DB_NAME: augj06n5s23taksn
+      DB_USERNAME: z9lpnxbt5gvszgbx
+      DB_PASSWORD: pkdkwpidfqx12am3
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: augj06n5s23taksn
+      MYSQL_USER: z9lpnxbt5gvszgbx
+      MYSQL_PASSWORD: pkdkwpidfqx12am3
+      MYSQL_ROOT_PASSWORD: pkdkwpidfqx12am3
+    ports:
+      - "3306:3306"
